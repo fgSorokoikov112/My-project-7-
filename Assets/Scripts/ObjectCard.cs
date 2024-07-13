@@ -12,5 +12,6 @@ public class ObjectCard : MonoBehaviour
     void Start(){
         num_ = Cards.Count;
         Cards.Add(this);
+        
     }
 }
