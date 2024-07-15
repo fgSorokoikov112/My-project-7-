@@ -6,6 +6,9 @@ public class CardOb : MonoBehaviour
 {
     GameObject current_;
     GameObject nCurrent_;
+    ObjectCard thisCard_;
+    public KeyCode ToggleKey;
+    public LayerMask layerMask;
     bool flag_ = false;
     bool Click(){
         if(Input.GetMouseButtonDown(0)){
@@ -17,10 +20,31 @@ public class CardOb : MonoBehaviour
             }
             bool isCard = hit.collider.gameObject.TryGetComponent<ObjectCard>(out ObjectCard card);
             if(card!= null){
-                Debug.Log(card.Building.name);
-                current_ = card.Building;
+                Debug.Log("Card is" + isCard);
+                thisCard_ = card;
+                current_ = card.building.icon;
             }
             return isCard;
+        }
+        return false;
+    }
+    bool NumPressed(){
+        if(Input.GetKeyDown(KeyCode.Alpha1)){
+            thisCard_ = ObjectCard.GetCard(0);
+            current_ = thisCard_.building.icon;
+            
+            return true;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha2)){
+            thisCard_ = ObjectCard.GetCard(1);
+            current_ = thisCard_.building.icon;
+            return true;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha3)){
+            return true;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha4)){
+            return true;
         }
         return false;
     }
@@ -29,20 +53,27 @@ public class CardOb : MonoBehaviour
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x,mousePos.y);
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            nCurrent_ = Instantiate(current_, hit.transform);
+            Debug.Log("sto");
+            nCurrent_ = Instantiate(current_, thisCard_.transform);
+            flag_ = !flag_;
+        }
+        else if(NumPressed() && !flag_){
+            nCurrent_ = Instantiate(current_, thisCard_.transform);
             flag_ = !flag_;
         }
         else if (flag_){
             if(Input.GetMouseButtonDown(0)){
                 Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Vector2 mousePos2D = new Vector2(mousePos.x,mousePos.y);
-                RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+                RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero,layerMask.value);
                 if(hit.collider != null){
                     if(hit.collider.gameObject.TryGetComponent<Box>(out Box x)){
                         if(!x.Set){
-                            Debug.Log(x.Set);
                             x.Set = true;
                             flag_ = false;
+                            x.build = nCurrent_.GetComponent<Building>();
+                            x.build.GetComponent<Building>().Stay = true;
+                            x.build.GetComponent<Building>().CurrentBox = x;
                             x.Center(nCurrent_);
                         }
                     }

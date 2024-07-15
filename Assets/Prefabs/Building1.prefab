@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2408094656677391340}
   - component: {fileID: 4499652821641475879}
-  - component: {fileID: -4639621798406304750}
+  - component: {fileID: 2733951191339184792}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Building1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7437601540418747682}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3802259, y: 0.5365533, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4639621798406304750
+--- !u!114 &2733951191339184792
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7437601540418747682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d4c6334559d28f4d854586f182fe103, type: 3}
+  m_Script: {fileID: 11500000, guid: 41d8910c3756ecf4ebb9edce2972ac9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building: {fileID: 7437601540418747682}
+  Health: 2
+  Damage: 1
+  AttackSpeed: 2
+  CurrentBox: {fileID: 0}
+  TBullet: {fileID: -1927839664600923467, guid: aad980a802c23354ab64bdec75fe61fe, type: 3}
+  icon: {fileID: 7437601540418747682}
+  Stay: 0
+  shot: {fileID: -2162014074330653292, guid: 6dbff2882eee57a4d851c2a07d1041a7, type: 3}
