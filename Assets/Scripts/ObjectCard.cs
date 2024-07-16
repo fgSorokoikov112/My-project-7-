@@ -8,9 +8,21 @@ public class ObjectCard : MonoBehaviour
 {
     public Building building;
     public int num_;
-    public static List<ObjectCard> Cards =new List<ObjectCard>();
+    public int Cost;
+    public int Cooldown;
+    public bool CooledDown = true;
+    public static List<ObjectCard> Cards = new List<ObjectCard>();
     void Start(){
-        Cards.Add(this);
+        if(Cards.Count == 0){
+            for(int i=0;i<PlayerStats.CardCount;i++){
+                Cards.Add(null);
+            }
+        }
+        Cards[num_] = this;
+    }
+    public IEnumerator CardCooldown(){
+        yield return new WaitForSeconds(Cooldown);
+        CooledDown = true;
     }
     public static ObjectCard GetCard(int num){
         return Cards[num];

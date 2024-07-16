@@ -12,6 +12,7 @@ public abstract class Building : MonoBehaviour
     public GameObject icon;
     public bool Stay = false;
     public void Delete(){
-        Destroy(gameObject);
+        if(gameObject)
+            Destroy(gameObject);
     }
 }

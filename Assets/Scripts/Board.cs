@@ -6,14 +6,22 @@ public class Board : MonoBehaviour
 {
     List<Box> board_ = new List<Box>();
     public Enemy enemy;
-    void SpawnEnemy(GameObject enemy){
-        int random = Random.Range(1,3);
-        Instantiate(enemy, Spawner.Spawners[random].transform);
+    public int delay;
+    bool flag_ = true;
+    void SpawnEnemy(){
+        int random = Random.Range(0,5);
+        Instantiate(enemy.sprite, Spawner.Spawners[random].transform);
     }
     void Update(){
-        if(Spawner.spawnerPoints_ > 0){
-            SpawnEnemy(enemy.sprite);
+        if(Spawner.spawnerPoints_ > 0 && flag_){
+            flag_ = false;
+            StartCoroutine(SpawnEnemyWithDelay());
             Spawner.spawnerPoints_--;
         }
+    }
+    IEnumerator SpawnEnemyWithDelay(){
+        yield return new WaitForSeconds(delay);
+        SpawnEnemy();
+        flag_ = true;
     }
 }

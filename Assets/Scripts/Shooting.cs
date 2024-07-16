@@ -11,10 +11,7 @@ public class Shooting : MonoBehaviour
     public void Shoot(){
         RaycastHit2D hit = Physics2D.Raycast(building.CurrentBox.transform.position,new Vector2(1,0), 100, layerMask.value);
         if(hit.collider != null){
-            Debug.Log(hit.collider.gameObject.TryGetComponent<Enemy>(out Enemy en));
-            Debug.Log(CanShoot);
             if(hit.collider.gameObject.TryGetComponent<Enemy>(out Enemy enemy) && enemy.Health>0 && CanShoot){
-                Debug.Log(hit.collider.gameObject.name);
                 CanShoot= !CanShoot;
                 StartCoroutine(Attack());
             }

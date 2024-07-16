@@ -9,8 +9,9 @@ public class Position : MonoBehaviour
     void Start(){
         if(Positions.Count == 0){
             for(int i=0;i<8;i++){
-                
+                Positions.Add(null);
             }
         }
+        Positions[Num] = this;
     }
 }

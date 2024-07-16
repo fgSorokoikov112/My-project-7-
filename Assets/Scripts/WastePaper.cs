@@ -21,7 +21,7 @@ public class WastePaper : MonoBehaviour
         return false;
     }
     void Update(){
-        if((Click() || Input.GetKeyDown(KeyCode.Alpha0)) && !flag_){
+        if((Click() || Input.GetKeyDown(Settings.Keys[0])) && !flag_){
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x,mousePos.y);
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);

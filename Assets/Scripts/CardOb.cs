@@ -29,37 +29,32 @@ public class CardOb : MonoBehaviour
         return false;
     }
     bool NumPressed(){
-        if(Input.GetKeyDown(KeyCode.Alpha1)){
-            thisCard_ = ObjectCard.GetCard(0);
-            current_ = thisCard_.building.icon;
-            
-            return true;
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha2)){
-            thisCard_ = ObjectCard.GetCard(1);
-            current_ = thisCard_.building.icon;
-            return true;
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha3)){
-            return true;
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha4)){
-            return true;
+        Debug.Log(Settings.Keys.Count);
+        for(int i = 1;i < PlayerStats.CardCount+1;i++){
+            if(Input.GetKeyDown(Settings.Keys[i])){
+                thisCard_ = ObjectCard.GetCard(i-1);
+                current_ = thisCard_.building.icon;
+                return true;
+            }
         }
         return false;
     }
     void Update(){
-        if(Click() && !flag_){
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 mousePos2D = new Vector2(mousePos.x,mousePos.y);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            nCurrent_ = Instantiate(current_, thisCard_.transform);
-            flag_ = !flag_;
-        }
-        else if(NumPressed() && !flag_){
-            nCurrent_ = Instantiate(current_, thisCard_.transform);
-            flag_ = !flag_;
-        }
+            if(Click() && !flag_){
+                if(PlayerStats.Resource>=thisCard_.Cost && thisCard_.CooledDown){
+                    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    Vector2 mousePos2D = new Vector2(mousePos.x,mousePos.y);
+                    RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+                    nCurrent_ = Instantiate(current_, thisCard_.transform);
+                    flag_ = !flag_;
+                }
+            }
+            else if(NumPressed() && !flag_){
+                if(PlayerStats.Resource>=thisCard_.Cost && thisCard_.CooledDown){
+                    nCurrent_ = Instantiate(current_, thisCard_.transform);
+                    flag_ = !flag_;
+                }
+            }
         else if (flag_){
             if(Input.GetMouseButtonDown(0)){
                 Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -69,10 +64,13 @@ public class CardOb : MonoBehaviour
                     if(hit.collider.gameObject.TryGetComponent<Box>(out Box x)){
                         if(!x.Set){
                             x.Set = true;
+                            PlayerStats.Resource -= thisCard_.Cost;
                             flag_ = false;
                             x.build = nCurrent_.GetComponent<Building>();
                             x.build.GetComponent<Building>().Stay = true;
                             x.build.GetComponent<Building>().CurrentBox = x;
+                            thisCard_.CooledDown = false;
+                            StartCoroutine(thisCard_.CardCooldown());
                             x.Center(nCurrent_);
                         }
                     }

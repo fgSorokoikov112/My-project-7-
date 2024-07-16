@@ -15,9 +15,10 @@ public abstract class Bullet : MonoBehaviour
             enemy.Death();
         }
     }
+    public virtual void OnTriggerEnter2D(Collider2D other){}
     public void DestroyOnHit(Enemy enemy){
         Destroy(gameObject);
     }
-    public abstract void Special();
+    public virtual void Special(){}
     public abstract void Move();
 }

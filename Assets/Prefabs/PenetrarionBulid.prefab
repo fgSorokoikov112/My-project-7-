@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7310398041570915252
+--- !u!1 &2932350759845750942
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6717792847347655201}
-  - component: {fileID: 8024228688263561526}
-  - component: {fileID: -1914221893317768198}
-  - component: {fileID: -1966159964499236545}
+  - component: {fileID: 2347123106529148551}
+  - component: {fileID: 485031929335644841}
+  - component: {fileID: -9163825906898132567}
   m_Layer: 0
-  m_Name: Building
+  m_Name: PenetrarionBulid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6717792847347655201
+--- !u!4 &2347123106529148551
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310398041570915252}
+  m_GameObject: {fileID: 2932350759845750942}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4, y: 0.34, z: 0}
+  m_LocalScale: {x: 1.28, y: 4.1087, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8024228688263561526
+--- !u!212 &485031929335644841
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310398041570915252}
+  m_GameObject: {fileID: 2932350759845750942}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,49 +74,33 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1914221893317768198
+--- !u!114 &-9163825906898132567
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310398041570915252}
+  m_GameObject: {fileID: 2932350759845750942}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41d8910c3756ecf4ebb9edce2972ac9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 2
-  Damage: 1
-  AttackSpeed: 2
+  Health: 3
+  Damage: 0
+  AttackSpeed: 3
   CurrentBox: {fileID: 0}
-  TBullet: {fileID: -1927839664600923467, guid: aad980a802c23354ab64bdec75fe61fe, type: 3}
-  icon: {fileID: 7310398041570915252}
+  TBullet: {fileID: -4166263661661427615, guid: 5cee42c9adc2838479fe143df9ca2c61, type: 3}
+  icon: {fileID: 2932350759845750942}
   Stay: 0
---- !u!114 &-1966159964499236545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7310398041570915252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dafbce7b313a714fad4ce89d70b025b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanShoot: 1
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 39
