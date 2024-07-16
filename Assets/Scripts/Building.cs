@@ -10,9 +10,12 @@ public abstract class Building : MonoBehaviour
     public Box CurrentBox;
     public Bullet TBullet;
     public GameObject icon;
+    bool flag_ = true;
     public bool Stay = false;
     public void Delete(){
-        if(gameObject)
+        if(flag_){
+            flag_ = false;
             Destroy(gameObject);
+        }
     }
 }

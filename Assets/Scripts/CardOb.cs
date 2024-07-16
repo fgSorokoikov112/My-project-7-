@@ -29,7 +29,6 @@ public class CardOb : MonoBehaviour
         return false;
     }
     bool NumPressed(){
-        Debug.Log(Settings.Keys.Count);
         for(int i = 1;i < PlayerStats.CardCount+1;i++){
             if(Input.GetKeyDown(Settings.Keys[i])){
                 thisCard_ = ObjectCard.GetCard(i-1);

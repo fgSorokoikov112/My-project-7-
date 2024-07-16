@@ -11,6 +11,7 @@ public abstract class Bullet : MonoBehaviour
     public GameObject Bull;
     public void DealDamage(Enemy enemy){
         enemy.Health -= Damage;
+        SpawnerPoint.WaveDamage += Damage;
         if(enemy.Health<=0){
             enemy.Death();
         }

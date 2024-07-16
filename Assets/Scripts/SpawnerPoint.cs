@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class SpawnerPoint : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static int Wave;
+    public static int WaveDamage;
+    public static int WaveHealth;
 }

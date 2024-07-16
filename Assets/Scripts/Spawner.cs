@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public static int spawnerPoints_ = 10;
+    public static int spawnerPoints_ = 2;
     public int Num;
     static public List<Spawner> Spawners = new List<Spawner>();
     void Start(){

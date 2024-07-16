@@ -9,6 +9,7 @@ public abstract class Enemy : MonoBehaviour
     public float speed;
     public float MaxSpeed = 10;
     public int Health;
+    public int Cost;
     public bool flag = true;
     public Rigidbody2D body;
     public void Move(){

@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class ResourceBuilding : Building
 {
-    bool flag_ = true;
+    bool canWork_ = true;
     IEnumerator CreateResource(){
         yield return new WaitForSeconds(AttackSpeed);
         PlayerStats.Resource += Damage;
-        flag_ = true;
+        canWork_ = true;
     }
     void Update(){
-        if(flag_){
-            flag_ = false;
+        if(canWork_){
+            canWork_ = false;
             StartCoroutine(CreateResource());
         }
     }

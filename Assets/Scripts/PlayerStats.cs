@@ -5,6 +5,6 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     static public int Resource = 100;
-    static public int CardCount = 3;
+    static public int CardCount = 4;
 
 }
