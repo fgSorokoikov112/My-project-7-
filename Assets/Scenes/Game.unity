@@ -3397,8 +3397,8 @@ MonoBehaviour:
   - {fileID: 8974174940583550562, guid: f5c93b4a51727d24aa5df3e0a76be7e7, type: 3}
   - {fileID: -4895566203794132470, guid: 49ea05191a402544ea0f61f0d671e4a2, type: 3}
   TChoice: {fileID: 1665249693}
-  delay: 6
-  WaveCount: 6
+  delay: 8
+  WaveCount: 7
   Difficulty: 1
 --- !u!1 &1212840497 stripped
 GameObject:

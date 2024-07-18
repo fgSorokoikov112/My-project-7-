@@ -31,6 +31,6 @@ public class Settings : MonoBehaviour
         for(int i=0; i < 9; i++){
             Debug.Log(Keys[i]);
         }
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 }
