@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 667388334789790606}
   - component: {fileID: -1927839664600923467}
   - component: {fileID: 9202971921535885827}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,9 +131,6 @@ MonoBehaviour:
   HitEvent: {fileID: 2466451107101770063, guid: 6754641058cfa4246a37ff0802d640de, type: 3}
   Damage: 1
   Bull: {fileID: 5612543765361735070}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!61 &9202971921535885827
 BoxCollider2D:
   m_ObjectHideFlags: 0

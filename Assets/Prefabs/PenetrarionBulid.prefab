@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.28, y: 4.1087, z: 1}
+  m_LocalScale: {x: 2.56, y: 8.2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 3
   Damage: 2
-  AttackSpeed: 3
+  AttackSpeed: 3.5
   CurrentBox: {fileID: 0}
   TBullet: {fileID: -4166263661661427615, guid: 5cee42c9adc2838479fe143df9ca2c61, type: 3}
   icon: {fileID: 2932350759845750942}

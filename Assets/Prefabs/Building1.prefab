@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,4 +104,3 @@ MonoBehaviour:
   TBullet: {fileID: -1927839664600923467, guid: aad980a802c23354ab64bdec75fe61fe, type: 3}
   icon: {fileID: 7437601540418747682}
   Stay: 0
-  shot: {fileID: -2162014074330653292, guid: 6dbff2882eee57a4d851c2a07d1041a7, type: 3}

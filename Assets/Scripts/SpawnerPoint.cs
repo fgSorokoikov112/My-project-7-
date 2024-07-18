@@ -4,7 +4,5 @@ using UnityEngine;
 
 public class SpawnerPoint : MonoBehaviour
 {
-    public static int Wave;
     public static int WaveDamage;
-    public static int WaveHealth;
 }

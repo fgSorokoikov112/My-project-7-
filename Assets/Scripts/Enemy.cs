@@ -22,6 +22,10 @@ public abstract class Enemy : MonoBehaviour
             body.velocity = Vector2.zero;
         }
     }
+    void Start(){
+        MaxSpeed+=Random.Range(0.0f, 0.2f);
+        speed += Random.Range(0.0f, 0.1f);
+    }
     public void Death(){
         Destroy(gameObject);
     }
