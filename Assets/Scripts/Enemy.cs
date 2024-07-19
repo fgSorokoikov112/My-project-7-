@@ -9,8 +9,10 @@ public abstract class Enemy : MonoBehaviour
     public float speed;
     public float MaxSpeed = 10;
     public int Health;
+    public float Delay;
     public int Cost;
     public bool flag = true;
+    public bool CanTakeDamage = false;
     public Rigidbody2D body;
     public void Move(){
         if(flag){
@@ -25,7 +27,9 @@ public abstract class Enemy : MonoBehaviour
     void Start(){
         MaxSpeed+=Random.Range(0.0f, 0.2f);
         speed += Random.Range(0.0f, 0.1f);
+        StartCoroutine(Unkillable(Delay));
     }
+    public abstract IEnumerator Unkillable(float delay);
     public void Death(){
         Destroy(gameObject);
     }

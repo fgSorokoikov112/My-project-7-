@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class InputControl : MonoBehaviour
 {
     public static bool Together = false;
     bool flag_ = false;
     public int Count;
+    public TMP_Text text;
     bool isUse_ = false;
     void OnGUI(){
         if(flag_){
@@ -43,6 +44,9 @@ public class InputControl : MonoBehaviour
     }
     public void SetTogether(){
         Together = true;
+    }
+    public void SetKey(){
+        //text.SetText(PlayerPrefs.GetInt(Count.ToString()));
     }
     public void SetDefault(){
         PlayerPrefs.SetInt("Settings", 1);

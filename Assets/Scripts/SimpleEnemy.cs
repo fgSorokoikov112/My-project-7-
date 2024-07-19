@@ -31,6 +31,10 @@ public class SimpleEnemy : Enemy
             }
         }
     }
+    public override IEnumerator Unkillable(float delay){
+        yield return new WaitForSeconds(delay);
+        CanTakeDamage = true;
+    }
     void Update(){
         Move();
     }

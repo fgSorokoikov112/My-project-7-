@@ -6,9 +6,11 @@ public class SimpleBullet : Bullet
 {
     public override void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.TryGetComponent<Enemy>(out Enemy enemy)){
-            HitEvent.hit.AddListener(DealDamage);
-            HitEvent.hit.AddListener(DestroyOnHit);
-            HitEvent.hit.Invoke(enemy);
+            if(enemy.CanTakeDamage){
+                HitEvent.hit.AddListener(DealDamage);
+                HitEvent.hit.AddListener(DestroyOnHit);
+                HitEvent.hit.Invoke(enemy);
+            }
         }
     }
     public override void Move(){

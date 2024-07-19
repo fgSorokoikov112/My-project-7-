@@ -18,7 +18,7 @@ public class Board : MonoBehaviour
     bool flag_ = true;
     bool won_ = false;
     void SpawnEnemy(Enemy curEnemy){
-        int random = Random.Range(0,5);
+        int random = Random.Range(0,4);
         WaveHealth += curEnemy.Health;
         Instantiate(curEnemy.sprite, Spawner.Spawners[random].transform);
     }
@@ -52,6 +52,7 @@ public class Board : MonoBehaviour
                 Spawner.spawnerPoints_ = startSpawnPoints_;
                 startSpawnPoints_ += Difficulty;
                 Difficulty++;
+                delay += 1;
             }
         }
         if(SpawnerPoint.WaveDamage == WaveHealth && WaveCount == 0 && !won_){
@@ -64,7 +65,7 @@ public class Board : MonoBehaviour
     }
     IEnumerator SpawnEnemyWithDelay(Enemy curEnemy){
         StartCoroutine(Progress());
-        yield return new WaitForSeconds(Random.Range(2.0f, delay));
+        yield return new WaitForSeconds(Random.Range(delay - 2.0f, delay));
         SpawnEnemy(curEnemy);
         flag_ = true;
     }

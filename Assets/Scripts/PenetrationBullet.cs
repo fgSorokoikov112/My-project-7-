@@ -11,16 +11,19 @@ public class PenetrationBullet : Bullet
     }
     public override void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.TryGetComponent<Enemy>(out Enemy enemy)){
-            if(count>0){
-                HitEvent.hit.AddListener(DealDamage);
-                HitEvent.hit.Invoke(enemy);
-                HitEvent.hit.RemoveListener(DealDamage);
-                count--;
-            }
-            else{
-                HitEvent.hit.AddListener(DealDamage);
-                HitEvent.hit.AddListener(DestroyOnHit);
-                HitEvent.hit.Invoke(enemy);
+            if(enemy.CanTakeDamage){
+                if(count>0){
+                    HitEvent.hit.AddListener(DealDamage);
+                    HitEvent.hit.Invoke(enemy);
+                    HitEvent.hit.RemoveListener(DealDamage);
+                    Damage--;
+                    count--;
+                }
+                else{
+                    HitEvent.hit.AddListener(DealDamage);
+                    HitEvent.hit.AddListener(DestroyOnHit);
+                    HitEvent.hit.Invoke(enemy);
+                }
             }
         }
     }

@@ -27,7 +27,7 @@ public class Shooting : MonoBehaviour
         CanShoot = !CanShoot;
     }
     void Spawn(){
-        currentBullet_ = Instantiate(building.TBullet.Bull,transform.position,transform.rotation).GetComponent<Bullet>();
+        currentBullet_ = Instantiate(building.TBullet.Bull,transform.position,building.TBullet.Bull.transform.rotation).GetComponent<Bullet>();
     }
     void Start(){
         building = GetComponent<Building>();
