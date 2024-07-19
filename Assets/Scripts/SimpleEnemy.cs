@@ -15,7 +15,7 @@ public class SimpleEnemy : Enemy
     IEnumerator AttackWithDelay(Box box,float delay){
         while(box.build.Health > 0){
             yield return new WaitForSeconds(delay);
-            box.build.Health--;
+            box.build.Health -= Damage;
         }
         box.GetComponent<Box>().Set = false;
         flag = true;

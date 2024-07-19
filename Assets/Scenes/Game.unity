@@ -2955,7 +2955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8458772352794538455, guid: 21e20e8ef7013b047b0caa7146febcd1, type: 3}
       propertyPath: Cooldown
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8458772352794538455, guid: 21e20e8ef7013b047b0caa7146febcd1, type: 3}
       propertyPath: building
@@ -4028,7 +4028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8458772352794538455, guid: 21e20e8ef7013b047b0caa7146febcd1, type: 3}
       propertyPath: Cooldown
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8458772352794538455, guid: 21e20e8ef7013b047b0caa7146febcd1, type: 3}
       propertyPath: building

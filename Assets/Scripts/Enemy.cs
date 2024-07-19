@@ -13,6 +13,7 @@ public abstract class Enemy : MonoBehaviour
     public int Cost;
     public bool flag = true;
     public bool CanTakeDamage = false;
+    public int Damage;
     public Rigidbody2D body;
     public void Move(){
         if(flag){

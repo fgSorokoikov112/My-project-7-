@@ -33,6 +33,7 @@ public class InputControl : MonoBehaviour
                         PlayerPrefs.SetInt("Settings", 0);
                         Settings.Keys[Count] = cur.keyCode;
                         PlayerPrefs.SetInt(Count.ToString(), (int)cur.keyCode);
+                        SetKey();
                     }
                     isUse_ = false;
                 }
@@ -45,8 +46,11 @@ public class InputControl : MonoBehaviour
     public void SetTogether(){
         Together = true;
     }
+    public void Def(){
+        text.SetText(((KeyCode)(Count + 48)).ToString());
+    }
     public void SetKey(){
-        //text.SetText(PlayerPrefs.GetInt(Count.ToString()));
+        text.SetText(((KeyCode)PlayerPrefs.GetInt(Count.ToString())).ToString());
     }
     public void SetDefault(){
         PlayerPrefs.SetInt("Settings", 1);

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 2
   Damage: 20
-  AttackSpeed: 3
+  AttackSpeed: 5
   CurrentBox: {fileID: 0}
   TBullet: {fileID: 0}
   icon: {fileID: 2450758512198902992}

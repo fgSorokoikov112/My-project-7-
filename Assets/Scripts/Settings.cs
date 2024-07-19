@@ -6,10 +6,11 @@ public class Settings : MonoBehaviour
     public static List<KeyCode> Keys = new List<KeyCode>();
     public static List<KeyCode> CurrentKeys = new List<KeyCode>();
     static public void DefaultSetting(){
-        for(int i = 0; i < 9; i++){
-            Keys[i] = (KeyCode)(i+48);
-        }
         PlayerPrefs.DeleteAll();
+        for(int i = 0; i < 9; i++){
+           PlayerPrefs.SetInt(i.ToString(), 48+i);
+           Keys[i] = (KeyCode)(i+48);
+        }
     }
     void Start(){
         for(int i = 0;i < 9;i++){
@@ -27,10 +28,10 @@ public class Settings : MonoBehaviour
                     Keys[i] = (KeyCode)(i+48);
                 }
             }
+            for(int i=0; i < 9; i++){
+                Debug.Log((KeyCode)PlayerPrefs.GetInt(i.ToString()));
+            }
+            DontDestroyOnLoad(gameObject);
         }
-        for(int i=0; i < 9; i++){
-            Debug.Log(Keys[i]);
-        }
-        DontDestroyOnLoad(gameObject);
     }
 }

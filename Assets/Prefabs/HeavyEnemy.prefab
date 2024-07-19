@@ -107,6 +107,7 @@ MonoBehaviour:
   Cost: 3
   flag: 1
   CanTakeDamage: 0
+  Damage: 2
   body: {fileID: -8948275414552743988}
 --- !u!50 &-8948275414552743988
 Rigidbody2D:

@@ -107,6 +107,7 @@ MonoBehaviour:
   Cost: 1
   flag: 1
   CanTakeDamage: 0
+  Damage: 1
   body: {fileID: -559483702957073264}
 --- !u!61 &-3793773081159370212
 BoxCollider2D:

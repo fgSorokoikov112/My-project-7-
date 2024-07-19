@@ -52,7 +52,7 @@ public class Board : MonoBehaviour
                 Spawner.spawnerPoints_ = startSpawnPoints_;
                 startSpawnPoints_ += Difficulty;
                 Difficulty++;
-                delay += 1;
+                delay += 2;
             }
         }
         if(SpawnerPoint.WaveDamage == WaveHealth && WaveCount == 0 && !won_){
